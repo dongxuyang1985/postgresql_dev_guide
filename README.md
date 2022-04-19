@@ -2,7 +2,7 @@
 
 《PostgreSQL开发指南》PDF版本以及示例表和初始化数据。
 
-脚本执行顺序：
+Scripts目录中的脚本执行顺序：
 
 1. 运行01_create_table.sql创建示例表;
 2. 运行02_insert_data.sql生成数据；
