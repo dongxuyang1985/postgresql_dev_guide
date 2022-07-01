@@ -1826,5 +1826,3 @@ INSERT INTO employees VALUES
 
 ALTER TABLE departments 
   ENABLE CONSTRAINT dept_mgr_fk;
-
-COMMIT;
