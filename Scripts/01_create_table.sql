@@ -3,8 +3,7 @@ CREATE TABLE departments
     , department_name  CHARACTER VARYING(30) NOT NULL
     , manager_id       INTEGER
     , location_id      INTEGER
-	, CONSTRAINT dept_id_pk
-                PRIMARY KEY (department_id)
+	, CONSTRAINT dept_id_pk PRIMARY KEY (department_id)
     ) ;
 
 
@@ -13,8 +12,7 @@ CREATE TABLE jobs
     , job_title      CHARACTER VARYING(35) NOT NULL
     , min_salary     INTEGER
     , max_salary     INTEGER
-	, CONSTRAINT job_id_pk
-               PRIMARY KEY(job_id)
+	, CONSTRAINT job_id_pk PRIMARY KEY(job_id)
     ) ;
 
 
@@ -30,27 +28,16 @@ CREATE TABLE employees
     , commission_pct NUMERIC(2,2)
     , manager_id     INTEGER
     , department_id  INTEGER
-	, CONSTRAINT     emp_emp_id_pk
-                     PRIMARY KEY (employee_id)
-    , CONSTRAINT     emp_salary_min
-                     CHECK (salary > 0) 
-    , CONSTRAINT     emp_email_uk
-                     UNIQUE (email)
-	, CONSTRAINT     emp_dept_fk
-                     FOREIGN KEY (department_id)
-                      REFERENCES departments(department_id)
-    , CONSTRAINT     emp_job_fk
-                     FOREIGN KEY (job_id)
-                      REFERENCES jobs(job_id)
-    , CONSTRAINT     emp_manager_fk
-                     FOREIGN KEY (manager_id)
-                      REFERENCES employees(employee_id)
+	, CONSTRAINT emp_emp_id_pk PRIMARY KEY (employee_id)
+    , CONSTRAINT emp_salary_min CHECK (salary > 0) 
+    , CONSTRAINT emp_email_uk UNIQUE (email)
+	, CONSTRAINT emp_dept_fk FOREIGN KEY (department_id) REFERENCES departments(department_id)
+    , CONSTRAINT emp_job_fk FOREIGN KEY (job_id) REFERENCES jobs(job_id)
+    , CONSTRAINT emp_manager_fk FOREIGN KEY (manager_id) REFERENCES employees(employee_id)
     ) ;
 
 ALTER TABLE departments
-ADD ( CONSTRAINT dept_mgr_fk
-               FOREIGN KEY (manager_id)
-                REFERENCES employees(employee_id)
+ADD ( CONSTRAINT dept_mgr_fk FOREIGN KEY (manager_id) REFERENCES employees(employee_id)
     ) ;
 
 
