@@ -1,5 +1,4 @@
-ALTER TABLE departments 
-  DISABLE CONSTRAINT dept_mgr_fk;
+ALTER TABLE departments ALTER CONSTRAINT dept_mgr_fk DEFERRABLE INITIALLY DEFERRED;
 
 INSERT INTO departments VALUES 
         ( 10
@@ -1824,5 +1823,4 @@ INSERT INTO employees VALUES
         , 110
         );
 
-ALTER TABLE departments 
-  ENABLE CONSTRAINT dept_mgr_fk;
+ALTER TABLE departments ALTER CONSTRAINT dept_mgr_fk NOT DEFERRABLE INITIALLY IMMEDIATE;
