@@ -37,8 +37,7 @@ CREATE TABLE employees
     ) ;
 
 ALTER TABLE departments
-ADD ( CONSTRAINT dept_mgr_fk FOREIGN KEY (manager_id) REFERENCES employees(employee_id)
-    ) ;
+ADD CONSTRAINT dept_mgr_fk FOREIGN KEY (manager_id) REFERENCES employees(employee_id);
 
 
 CREATE VIEW emp_details_view
