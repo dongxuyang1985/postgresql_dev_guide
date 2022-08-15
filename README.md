@@ -1,5 +1,7 @@
 # PostgreSQL开发指南
 
+配套视频：https://www.bilibili.com/video/BV1ZW4y127cz
+
 《PostgreSQL开发指南》PDF版本以及示例表和初始化数据。
 
 Scripts目录中的脚本执行顺序：
